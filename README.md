@@ -1,14 +1,15 @@
-#版权申明
+# 版权申明
 
 	这个项目是我fork了某位大神的开源git项目,并在其基础上进行的开发
 	
 [原项目git地址](https://github.com/elva2596/vueBlog)
-[项目git地址](https://github.com/The-Never/vueBlog)
 
-##原项目
+[我的项目git地址](https://github.com/The-Never/vueBlog)
+
+## 原项目
 > 一个前端基于Vue2.0全家桶，后端基于Express+Mongodb的前后端分离博客。前端界面使用了flexbox+rem布局，后端界面使用了element ui。本项目可以作为一个前端进阶项目，从前端flexbox布局到前端框架的使用，再到后端以及数据库，是一个打通前后端流程的一个项目。由于最近刚换了域名，正在备案中，所以目前没有线上演示，不过可以看一下下面的动态图特效。  
 
-##修改说明
+## 修改说明
 * 数据库由Mongodb改为mysql
 * 后台增加了koa2框架的支持（可以使用express或者koa2）
 * 对项目依赖进行了升级，并对相应的代码进行了修改
