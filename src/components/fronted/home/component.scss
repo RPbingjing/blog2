@@ -1,0 +1,31 @@
+#home {
+  background-color: #000;
+  margin:auto;
+  list-style: none;
+  article{
+    padding-bottom: 1rem;
+    border-bottom:1px solid #d2d2d2;
+    margin-bottom: 2rem;
+  }
+  .loadMore{
+    text-align: right;
+    margin:4rem 0 0 0;
+    display: flex;
+    display: webkit-flex;
+    button {
+      cursor: pointer;
+      outline:none;
+      padding:1rem;
+      margin:auto;
+      border-radius:.5rem;
+      color:rgba(0, 0, 0, 1);
+      border:1px solid #bfcbd9;
+      background-color: #f7f7f7;
+    }
+  }
+  @media screen and (max-width:786px){
+    .loadMore{
+      margin: 3rem 0  .8rem 0;
+    }
+  }
+}

@@ -1,20 +1,20 @@
-import Reg from '@/components/backEnd/Reg';
-import Login from '@/components/backEnd/Login';
+import Reg from '@/components/backEnd/reg/ui';
+import Login from '@/components/backEnd/login/ui';
 
-import Admin from '@/components/backEnd/Admin';
-import ArticleCreate from '@/components/backEnd/ArticleCreate'
-import ArticleList from '@/components/backEnd/ArticleList'
-import ArticleEdit from '@/components/backEnd/ArticleEdit'
-import ClassList from '@/components/backEnd/ClassList'
+import Admin from '@/components/backEnd/admin/ui';
+import ArticleCreate from '@/components/backEnd/articleCreate/ui'
+import ArticleList from '@/components/backEnd/articleList/ui'
+import ArticleEdit from '@/components/backEnd/articleEdit/ui'
+import ClassList from '@/components/backEnd/classList/ui'
 
-import Home from '@/components/fronted/Home';
-import Front from '@/components/fronted/Front';
-import About from '@/components/fronted/About';
-import Tags from '@/components/fronted/tags';
-import Article from '@/components/fronted/Article';
-import Project from '@/components/fronted/Project';
+import Home from '@/components/fronted/home/ui';
+import Front from '@/components/fronted/front/ui';
+import About from '@/components/fronted/about/ui';
+import Tags from '@/components/fronted/tags/ui';
+import Article from '@/components/fronted/article/ui';
+import Project from '@/components/fronted/project/ui';
 
-import NotFound from '@/components/NotFound'
+import NotFound from '@/components/notFound/ui'
 
 export default [
   {

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div id="app" v-cloak>
       <router-view></router-view>
 </div>
@@ -22,8 +22,5 @@ export default {
 </script>
 
 <style lang="css">
-
-  #app{
-    height: 100%;
-  }
+  @import './reset.css';
 </style>

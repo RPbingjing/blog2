@@ -1,0 +1,17 @@
+
+<article>
+      <header>
+          <div>
+              <router-link :to="{path:`/article/${article.articleId}`}" class="article_title">
+                  {{article.title}}
+              </router-link>
+          </div>
+          <div>
+              <p class="article_creatAt" >{{article.createTime}}</p>
+          </div>
+      </header>
+  <section class="article_main">{{article.brief}}</section>
+  <footer>
+      <router-link class="article_readMore" :to="{path:`/article/${article.articleId}`}">阅读全文>></router-link>
+  </footer>
+</article>

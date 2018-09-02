@@ -1,0 +1,5 @@
+<section id="home">
+    <article-item v-for='(item,index) in items' :article='item' :key='index'></article-item>
+    <footer class='loadMore'><el-button type="primary" :loading="loadMoreFlag" @click='loadMore'>{{loadMoreText}}</el-button></footer>
+</section>
+

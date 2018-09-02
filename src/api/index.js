@@ -10,6 +10,7 @@ const front = axios.create(); //前台axios实例
 // back.defaults.headers.post['Content-Type'] = 'application/json'
 // axios.defaults.headers.common['Authorization'] = 'dailu';
 axios.defaults.headers.post['Content-Type'] = 'application/json'
+axios.defaults.baseURL = "http://www.xuguobin.club/api/blog/";
 
 if (localStorage.getItem('jwt')) {
   /* localStorage.getItem('jwt')是带引号的字符串
@@ -41,63 +42,63 @@ front.interceptors.response.use(response => {
 export default {
   // 注册
   localReg(data) {
-    return axios.post('/api/admin/reg', data)
+    return axios.post('/admin/reg', data)
   },
   // 登录
   localLogin(data) {
-    return axios.post('/api/admin/login', data)
+    return axios.post('/admin/login', data)
   },
   //获取文章列表{带分页获取}
   getArticleList(data) {
-    return back.post('/api/article/lists', data);
+    return back.post('/article/lists', data);
   },
   // 不带分页获取文章
   getArticleLists(params) {
-    return front.post('/api/article/articleLists', params);
+    return front.post('/article/articleLists', params);
   },
   // 根据classify获取文章列表
   getArticlesByClassify(params) {
-    return front.post('/api/article/noAuthArtilcelists', params);
+    return front.post('/article/noAuthArtilcelists', params);
   },
   // 创建文章
   createArticle(params) {
-    return back.post('/api/article/create', params);
+    return back.post('/article/create', params);
   },
   // 删除一篇文章
   removeOneArticle(params) {
-    return back.post('/api/article/remove', params);
+    return back.post('/article/remove', params);
   },
   // 根据postID获取一篇文章(带权限)
   getOneArticle(params) {
-    return back.post('/api/article/onePage', params);
+    return back.post('/article/onePage', params);
   },
   // 根据postID获取一篇文章(不带权限)
   getOneArticleNoAuth(params) {
-    return front.post('/api/article/noAuth', params);
+    return front.post('/article/noAuth', params);
   },
   // 编辑一篇文章
   editArticle(params) {
-    return back.post('/api/article/edit', params);
+    return back.post('/article/edit', params);
   },
   // 获取分类列表
   getClassify() {
-    return back.get('/api/classify/lists');
+    return back.get('/classify/lists');
   },
   getNoAuthClass() {
-    return front.get('/api/classify/noAuth');
+    return front.get('/classify/noAuth');
   },
 
   // 删除某一个分类
   removeClassifyList(params) {
-    return back.post('/api/classify/remove', params);
+    return back.post('/classify/remove', params);
   },
   // 添加分类
   addClassify(params) {
-    return back.post('/api/classify/create', params);
+    return back.post('/classify/create', params);
   },
 
   // 编辑分类
   editClassfy(params) {
-    return back.post('/api/classify/edit', params);
+    return back.post('/classify/edit', params);
   }
 }
