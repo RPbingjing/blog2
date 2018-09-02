@@ -7,13 +7,14 @@ export function sub(obj,res){
           title:'成功',
           message:'提交成功',
           type:'success'
-        })
+        });
   }else if(res.data.code==401){
         this.$notify({
         title:'失败',
         message,
         type:'error'
-      })
+      });
+      console.log(222);
        setTimeout(()=>{
           this.$router.replace({path:'/login'})
       },500)

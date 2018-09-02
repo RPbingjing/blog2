@@ -30,6 +30,10 @@
             <i class="el-icon-menu"></i>
             <span slot="title">分类管理</span>
           </el-menu-item>
+          <el-menu-item index="/admin/projsList">
+            <i class="el-icon-tickets"></i>
+            <span slot="title">项目管理</span>
+          </el-menu-item>
         </el-menu>
       </el-col>
       <!-- 左侧导航结束 -->

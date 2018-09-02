@@ -1,67 +1,44 @@
-import Reg from '@/components/backEnd/Reg';
-import Login from '@/components/backEnd/Login';
-
-import Admin from '@/components/backEnd/Admin';
-import ArticleCreate from '@/components/backEnd/ArticleCreate'
-import ArticleList from '@/components/backEnd/ArticleList'
-import ArticleEdit from '@/components/backEnd/ArticleEdit'
-import ClassList from '@/components/backEnd/ClassList'
-
-import Home from '@/components/fronted/Home';
-import Front from '@/components/fronted/Front';
-import About from '@/components/fronted/About';
-import Tags from '@/components/fronted/tags';
-import Article from '@/components/fronted/Article';
-import Project from '@/components/fronted/Project';
-
-import NotFound from '@/components/NotFound'
-
 export default [
   {
     path: '/reg',
-    component: Reg,
+    component: resolve => require(['@/components/backEnd/Reg'],resolve),
     meta: { auth: false }
   },
 
   {
     path: '/login',
-    component: Login,
+    component: resolve => require(['@/components/backEnd/Login'],resolve),
     meta: { auth: false }
   },
 
   {
     //前台路由
     path: '/',
-    component: Front,
+    component: resolve => require(['@/components/fronted/Front'],resolve),
     children: [
       { 
         path: '', 
-        redirect: 'home', 
-        meta: { auth: false } 
-      },
-      { 
-        path: 'home', 
-        component: Home, 
+        redirect: 'about', 
         meta: { auth: false } 
       },
       { 
         path: 'about', 
-        component: About, 
+        component: resolve => require(['@/components/fronted/About'],resolve),
         meta: { auth: false } 
       },
       { 
-        path: 'tags', 
-        component: Tags, 
+        path: 'record', 
+        component: resolve => require(['@/components/fronted/Record'],resolve),
         meta: { auth: false } 
       },
       {
         path: 'project',
-        component: Project,
+        component: resolve => require(['@/components/fronted/Project'],resolve),
         meta: { auth: false }
       },
       { 
         path: 'article/:id', 
-        component: Article, 
+        component: resolve => require(['@/components/fronted/Article'],resolve),
         meta: { auth: false, scrollToTop: true } 
       },
     ]
@@ -70,7 +47,7 @@ export default [
   {
     // 后台路由
     path: '/admin',
-    component: Admin,
+    component: resolve => require(['@/components/backEnd/Admin'],resolve),
     children: [
       {
         // 文章列表单独一个组件(可以删除并且编辑，编辑的时候需要跳转到另一个路由)
@@ -80,31 +57,36 @@ export default [
       {
         // 文章列表单独一个组件(可以删除并且编辑，编辑的时候需要跳转到另一个路由)
         path: 'articleList',
-        component: ArticleList,
+        component: resolve => require(['@/components/backEnd/ArticleList'],resolve),
         name: '文章管理'
       },
       {
         // 创建文章单独一个组件
         path: 'articleCreate',
-        component: ArticleCreate,
+        component: resolve => require(['@/components/backEnd/ArticleCreate'],resolve),
         name: '创建文章'
       },
       {
         path: 'articleEdit/:articleId',
-        component: ArticleEdit,
+        component: resolve => require(['@/components/backEnd/ArticleEdit'],resolve),
         name: "编辑文章"
       },
       {
         path: 'classList',
-        component: ClassList,
+        component: resolve => require(['@/components/backEnd/ClassList'],resolve),
         name: '分类管理'
         // 创建分类直接在分类列表里面出现弹层
+      },
+      {
+        path: 'projsList',
+        component: resolve => require(['@/components/backEnd/ProjsList'],resolve),
+        name: '项目管理'
       }
     ]
   },
   {
     path: '*', 
-    component: NotFound
+    component: resolve => require(['@/components/NotFound'],resolve),
   }
   //
 

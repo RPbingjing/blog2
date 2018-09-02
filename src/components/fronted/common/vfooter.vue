@@ -1,6 +1,6 @@
 <template lang="html">
   <footer>
-    <p>Copyrights © 2017 平凡之路. All Rights Reserved.</p>
+    <p>Copyrights © 2018 帕尼尼. All Rights Reserved.</p>
   </footer>
 </template>
 

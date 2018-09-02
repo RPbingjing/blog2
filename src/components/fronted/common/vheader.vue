@@ -3,10 +3,9 @@
       <div class="bg"></div>
         <nav  class="header-bg">
           <ul>
-            <li><router-link to="/home">主页</router-link></li>
-            <li><router-link to="/tags">标签</router-link></li>
-            <li><router-link to="/about">关于</router-link></li>
             <li><router-link to="/project">项目</router-link></li>
+            <li><router-link to="/record">记录</router-link></li>
+            <li><router-link to="/about">关于</router-link></li>
           </ul>
         </nav>
         <!-- 导航 结束-->
@@ -34,7 +33,7 @@ export default {
       setTimeout(()=>{
         this.show_headline = true;
         this.finalheadline = val
-      },200)
+      },this.$con.FRONTLOADTIME)
     }
   }
 }
@@ -63,15 +62,13 @@ export default {
     background:  url('../../../assets/img/bgm.jpg') no-repeat center /cover;
     /* brightness()给图片应用一种线性乘法，使其看起来更亮或更暗。如果值是0%，图像会全黑。值是100%，
     则图像无变化。其他的值对应线性乘数效果。值超过100%也是可以的，图像会比原来更亮。如果没有设定值，默认是1。*/
-    filter: brightness(0.7);
+    filter: brightness(0.7); /*0 暗<-图片 1 图片->亮 2*/
   }
   nav ul{
     display: flex;
     display: -webkit-flex;
     -webkit-justify-content:flex-end;
     justify-content: flex-end;
-    margin:0;
-    list-style: none;
   }
   nav a {
     font-size:1.6rem;

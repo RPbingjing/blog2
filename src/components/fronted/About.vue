@@ -10,9 +10,9 @@
         <a href="https://blog.csdn.net/Nate__River/" target="_blank">CSDN</a>
       </p>
       <h2>关于网站</h2>
-      <p>本站服务端采用 express + mongoDB 搭建, 客户端采用Vue2全家桶</p>
-      <p>主要功能包括: 后台登录, 注册, 管理, 标签, 文章, 支持markdown语法编辑, 支持代码高亮</p>
-      <p>主要技术栈: express, mongoolass, vue2, vue2-router, vuex, axios, es6, element ui</p>
+      <p>写这个网站主要有两个想法</p>
+      <p>一是我想把我对人生的体会记录下来。回顾过往，收获新知</p>
+      <p>二是我想把我的项目展示出来，希望对大家有些帮助，也希望大家提出指教</p>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
   mounted(){
     this.$store.dispatch('changeHeadLine','关于')
     setTimeout(()=>{
-      // this.$store.dispatch('showProgress', 100)
+      this.$store.dispatch('showProgress', 100)
       this.shows = true;
       this.loading2 = false
     },this.$con.FRONTLOADTIME)

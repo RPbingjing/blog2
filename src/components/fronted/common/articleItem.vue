@@ -42,6 +42,7 @@
         font-size: 1.6rem;
         color: #34495e;
         line-height: 1.6em;
+        margin: 1.6rem 0;
         /*padding:0.6rem 0;*/
     }
     footer {
