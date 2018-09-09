@@ -1,0 +1,9 @@
+<article class="article" v-loading="loading2"  element-loading-text="加载中">
+    <header>
+      <div class="home_title">{{oneArticle.title}}</div>
+    <div>
+      <p class="home_creatAt">{{oneArticle.createTime}}</p>
+    </div>
+  </header>
+  <section v-html="oneArticle.contentToMark" class="home_main"></section>
+</article>

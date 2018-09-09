@@ -22,8 +22,5 @@ export default {
 </script>
 
 <style lang="css">
-
-  #app{
-    height: 100%;
-  }
+  @import './reset.css';
 </style>

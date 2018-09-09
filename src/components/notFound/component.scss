@@ -1,0 +1,27 @@
+#notfound {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:#0A7189;
+  color:#fff;
+  .notfound-inner {
+    h1 {
+      font-size:5rem;
+      font-weight: 500;
+    }
+    p {
+      margin-top: 4rem;
+      a {
+        display: block;
+        color:#fff;
+        text-decoration: underline;
+        font-size: 2rem;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

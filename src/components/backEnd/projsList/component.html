@@ -1,0 +1,54 @@
+<section>
+  <el-row>
+    <el-row style="padding:10px 15px;background:#fff">
+      <el-col>
+        <el-button size="small" type="primary" @click="createProject" style="float:right">添加项目</el-button>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col>
+        <el-table style='width:100%' align="center" :data="lists" v-loading="listLoading" element-loading-text="拼命加载中">
+          <el-table-column type='index' width="60"></el-table-column>
+          <el-table-column prop="createTime" min-width="180" label="创建时间"></el-table-column>
+          <el-table-column prop="title" min-width="180" label="项目名称"></el-table-column>
+          <el-table-column min-width="200" label="操作">
+            <template slot-scope='scope'>
+              <!--这里点击查看进入具体页面但是路径中必须带有admin,这时具体页面里会出现评论的删除选项  -->
+              <el-button size="small" type='primary' @click="editProject(scope.row)">编辑</el-button>
+              <el-button size="small" type='danger' @click="remove(scope.row.projId)">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+      </el-col>
+    </el-row>
+    <!-- 表格结束 -->
+    <el-row>
+      <el-col>
+        <el-dialog :title="formTitle" :visible.sync="formVisible">
+          <el-form :model="projectInf" label-width="120px" ref="projectInf" :rules="formRule">
+            <el-form-item label="项目名称" prop="title">
+              <el-input v-model='projectInf.title' auto-complete='off'></el-input>
+            </el-form-item>
+            <el-form-item label="项目描述" prop="descs">
+              <el-input v-model='projectInf.descs' auto-complete='off'></el-input>
+            </el-form-item>
+            <el-form-item label="演示地址" prop="showSrc">
+              <el-input v-model='projectInf.showSrc' auto-complete='off'></el-input>
+            </el-form-item>
+            <el-form-item label="源码地址" prop="codeSrc">
+              <el-input v-model='projectInf.codeSrc' auto-complete='off'></el-input>
+            </el-form-item>
+            <el-form-item label="博客地址" prop="blogSrc">
+              <el-input v-model='projectInf.blogSrc' auto-complete='off'></el-input>
+            </el-form-item>
+          </el-form>
+          <div slot="footer">
+            <el-button @click="formVisible = false">取 消</el-button>
+            <el-button type="primary" @click="editSubmit" :loading="editLoading">{{btnText}}</el-button>
+          </div>
+        </el-dialog>
+        <!-- 弹窗结束 -->
+      </el-col>
+    </el-row>
+  </el-row>
+</section>

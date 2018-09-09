@@ -1,0 +1,20 @@
+<section>
+  <div class="container">
+    <el-form class="reg_form" :model="user" :rules="regRules" ref="user" label-position="left" label-width="0px">
+      <h3 class="title">系统注册</h3>
+      <el-form-item prop="account">
+        <el-input type="text" v-model="user.account" auto-complete="off" placeholder="账号"></el-input>
+      </el-form-item>
+      <el-form-item prop="checkPass">
+        <el-input type="password" v-model="user.checkPass" auto-complete="off" placeholder="密码"></el-input>
+      </el-form-item>
+      <el-form-item prop="checkRepeatPass">
+        <el-input type="password" v-model="user.checkRepeatPass" auto-complete="off" placeholder="重复输入密码"></el-input>
+      </el-form-item>
+      <el-form-item style="width:100%;">
+        <el-button class='reg_button' type="primary" style="width:40%;" @click="handleSubmit">注册</el-button>
+        <el-button class='login_button' type="primary" style="width:40%;" @click="toLogin">登录</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
+</section>

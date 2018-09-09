@@ -1,0 +1,41 @@
+.panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: #1F2D3D;
+}
+.panel-top {
+  height: 60px;
+  line-height: 60px;
+  background: #1F2D3D;
+  color: #c0ccda;
+}
+.panel-top .rightbar {
+  text-align: right;
+  padding-right: 70px;
+}
+.panel-center {
+  background: #324057;
+  position: absolute;
+  top: 60px;
+  bottom: 0px;
+  width: 100%;
+  overflow: hidden;
+  /*最外层要hidden*/
+  /*这是行，绝对定位之后没有宽度因此必须设置width*/
+}
+.breadcrumb {
+  margin-bottom: 15px;
+}
+.panel-c-c {
+  /*这是列，因为已经有了列的宽度因此无需设置width*/
+  background: #f1f2f7;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  overflow-y: scroll;
+  /*内层设置滚动*/
+  padding: 30px;
+}

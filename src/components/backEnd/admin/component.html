@@ -1,0 +1,55 @@
+<section>
+    <el-row class="panel">
+      <el-row class="top">
+        <el-col :span='23' class="panel-top" :push="1">
+          <!-- push就是相对定位了 -->
+          <!--  offset设置的是margin-lef-->
+          <el-col :span="19" style='font-size:26px'>
+            <span @click="toHome" style="cursor:pointer">Panini&nbsp;<i style="color:#20a0ff">Blogs</i></span>
+          </el-col>
+          <el-col :span='5' class='rightbar'>
+            <el-button type="text" @click="con">注销</el-button>
+          </el-col>
+        </el-col>
+      </el-row>
+      <!-- 顶部导航结束 -->
+      <el-row class="panel-center">
+        <el-col :span="5">
+          <el-menu
+          style="border-right:none" 
+          background-color="#324057"
+          text-color="#fff" 
+          router 
+          default-active="articleList" 
+          active-text-color="#20A0FF">
+            <el-menu-item index="/admin/articleList">
+              <i class="el-icon-document"></i>
+              <span slot="title">文章管理</span>
+            </el-menu-item>
+            <el-menu-item index="/admin/classList">
+              <i class="el-icon-menu"></i>
+              <span slot="title">分类管理</span>
+            </el-menu-item>
+            <el-menu-item index="/admin/projsList">
+              <i class="el-icon-tickets"></i>
+              <span slot="title">项目管理</span>
+            </el-menu-item>
+          </el-menu>
+        </el-col>
+        <!-- 左侧导航结束 -->
+        <el-col :span='19' class="panel-c-c">
+          <el-row>
+            <el-col :span='24' class="breadcrumb">
+              <el-breadcrumb separator="/" style='float:right'>
+                <el-breadcrumb-item :to="{path:currentPath}">{{currentPathNameParent}}</el-breadcrumb-item>
+                <el-breadcrumb-item>{{currentPathName}}</el-breadcrumb-item>
+              </el-breadcrumb>
+            </el-col>
+          </el-row>
+          <router-view></router-view>
+        </el-col>
+        <!--  面包屑导航结束-->
+      </el-row>
+    </el-row>
+</section>
+  

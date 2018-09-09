@@ -1,0 +1,12 @@
+<section class="record" v-loading="loading2" element-loading-text="加载中">
+    <div>
+        <ul class="record_list">
+          <li v-for='(item,index) in items' :key='index'>
+            <a class="record_btn" :to="`/tags/${item.articleId}`" @click.prevent="gets(index,item.classType)" :class="{'active':index==selected}">{{item.classType}}</a>
+          </li>
+        </ul>
+        <transition-group name="list" tag="div">
+          <article-item v-for='item in articleLists' v-if='show' :key="item.articleId" :article='item'></article-item>
+        </transition-group>
+      </div>
+</section>

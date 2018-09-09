@@ -1,0 +1,14 @@
+<section class="project" v-loading="loading" element-loading-text="加载中">
+  <ul>
+    <li v-for='(proj,index) in projs' :key='index'>
+      <h1>{{proj.title}}</h1>
+      <span>{{proj.createTime}}</span>
+      <p>{{proj.descs}}</p>
+      <div>
+        <a :href="proj.showSrc" style='color:#5daf34' target='_blank'>在线演示</a>
+        <a :href="proj.codeSrc" style='color:#3a8ee6' target='_blank'>项目源码</a>
+        <a :href="proj.blogSrc" style='color:#f56c6c' target='_blank'>阅读全文</a>
+      </div>
+    </li>
+  </ul>
+</section>
